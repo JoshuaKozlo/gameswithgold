@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>999957681265-tqf0mftepkj0kkisrd7a5hdjr6a1acsu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.999957681265-tqf0mftepkj0kkisrd7a5hdjr6a1acsu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJkdmxGr1q1hkidWpZPoIo3gFRYLNoTds</string>
+	<key>GCM_SENDER_ID</key>
+	<string>999957681265</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hansolopreneur.GamesWithGold</string>
+	<key>PROJECT_ID</key>
+	<string>gameswithgold-12340</string>
+	<key>STORAGE_BUCKET</key>
+	<string>gameswithgold-12340.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:999957681265:ios:86647edfc6d48f08</string>
+	<key>DATABASE_URL</key>
+	<string>https://gameswithgold-12340.firebaseio.com</string>
+</dict>
+</plist>
