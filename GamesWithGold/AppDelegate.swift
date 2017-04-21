@@ -12,6 +12,7 @@ import UserNotifications
 import Firebase
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
@@ -141,6 +142,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         FIRMessaging.messaging().disconnect()
         print("Disconnected from FCM.")
+        
+        if let navigationController = self.window?.rootViewController as? UINavigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     // [END disconnect_from_fcm]
 }

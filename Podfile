@@ -11,6 +11,7 @@ target 'GamesWithGold' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Storage'
   pod 'Firebase/AdMob'
+  pod 'SDWebImage'
   target 'GamesWithGoldTests' do
     inherit! :search_paths
     # Pods for testing
