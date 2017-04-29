@@ -26,7 +26,7 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadBannerAd()
+//        loadBannerAd()
     }
 
     // MARK: - Table view data source

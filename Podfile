@@ -9,8 +9,8 @@ target 'GamesWithGold' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
-  pod 'Firebase/Storage'
   pod 'Firebase/AdMob'
+  pod 'Firebase/Auth'
   pod 'SDWebImage'
   target 'GamesWithGoldTests' do
     inherit! :search_paths

@@ -25,7 +25,7 @@ class GamesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         gamesTableView.dataSource = self
         
         fetchGames()
-        loadBannerAd()
+//        loadBannerAd()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
