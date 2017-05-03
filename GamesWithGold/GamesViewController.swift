@@ -11,23 +11,30 @@ import Firebase
 
 class GamesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var bannerAd: GADBannerView!
+    @IBOutlet weak var bannerAd = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
     @IBOutlet weak var videoWebView: UIWebView!
     @IBOutlet weak var gamesTableView: UITableView!
-    var id = ""
+    var month: Month! {
+        didSet {
+            navigationItem.title = month.name
+            fetchGames()
+        }
+    }
     var games = [Game]()
-   
     
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
         gamesTableView.delegate = self
         gamesTableView.dataSource = self
+        loadBannerAd()
         
-        fetchGames()
-//        loadBannerAd()
+        let rightButton = UIBarButtonItem(image: UIImage(named: "message"), style: .plain, target: self, action: #selector(showCommentsController))
+        self.navigationItem.rightBarButtonItem = rightButton
+        
     }
-    
+        
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -49,7 +56,7 @@ class GamesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func fetchGames() {
-        FIRDatabase.database().reference().child("games/\(id)").observeSingleEvent(of: .value, with: { (snapshot) in
+        FIRDatabase.database().reference().child("games/\(month.id)").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let video = value?["video"] as? String ?? ""
             if let games = value?["games"] as? [String: AnyObject] {
@@ -72,11 +79,30 @@ class GamesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func showCommentsController() {
+        let commentLogController = CommentsCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        commentLogController.month = month
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+        
+        navigationController?.pushViewController(commentLogController, animated: true)
+    }
+    
     //MARK: Ad Methods
     
     func loadBannerAd() {
-        bannerAd.adUnitID = "ca-app-pub-8452783658374563/5380329135"
-        bannerAd.rootViewController = self
-        bannerAd.load(GADRequest())
+        bannerAd?.adUnitID = "ca-app-pub-8452783658374563/5380329135"
+        bannerAd?.rootViewController = self
+        bannerAd?.load(GADRequest())
     }
 }
+
+extension UINavigationBar {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let newSize = CGSize(width: UIScreen.main.bounds.width, height: 45)
+        return newSize
+    }
+}
+

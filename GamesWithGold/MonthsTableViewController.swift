@@ -13,7 +13,7 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
     
     // MARK: Properties
     @IBOutlet weak var monthsTableView: UITableView!
-    @IBOutlet weak var bannerAd: GADBannerView!
+    @IBOutlet weak var bannerAd = GADBannerView(adSize: kGADAdSizeSmartBannerLandscape)
     var sections = Dictionary<String, Array<Month>>()
     var sortedSections = [String]()
     
@@ -22,11 +22,28 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
         monthsTableView.delegate = self
         monthsTableView.dataSource = self
         navigationSetup()
-        fetchMonths()
+        
+        if (FIRAuth.auth()?.currentUser) != nil {
+            
+            fetchMonths()
+        } else {
+            
+            FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+                if error != nil {
+                    let alert = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alert.addAction(defaultAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    self.fetchMonths()
+                }
+            })
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        loadBannerAd()
+        loadBannerAd()
+        
     }
 
     // MARK: - Table view data source
@@ -47,7 +64,7 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
         let tableSection = sections[sortedSections[indexPath.section]]
         let tableItem = tableSection![indexPath.row]
         
-        cell.nameLabel.text = tableItem.title
+        cell.nameLabel.text = tableItem.name
 
         // Configure the cell...
         return cell
@@ -60,9 +77,9 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Ad Methods
     
     func loadBannerAd() {
-        bannerAd.adUnitID = "ca-app-pub-8452783658374563/4651972339"
-        bannerAd.rootViewController = self
-        bannerAd.load(GADRequest())
+        bannerAd?.adUnitID = "ca-app-pub-8452783658374563/4651972339"
+        bannerAd?.rootViewController = self
+        bannerAd?.load(GADRequest())
     }
 
 
@@ -76,8 +93,7 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
         if let destination = segue.destination as? GamesViewController {
            let section = sections[sortedSections[(monthsTableView.indexPathForSelectedRow?.section)!]]
            let tableItem = section![(monthsTableView.indexPathForSelectedRow?.row)!]
-           destination.id = tableItem.ref
-           destination.title = tableItem.title
+           destination.month = tableItem
         }
     }
     
@@ -99,15 +115,20 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
             
             // If we dont have a section "year" for a particular date we create one, otherwise just add it to an existing one.
             if self.sections.index(forKey: year) == nil {
-                self.sections[year] = [Month(title: name, ref: id)]
+                self.sections[year] = [Month(name: name, id: id)]
             } else {
-                self.sections[year]!.insert(Month(title: name, ref: id), at: 0)
+                self.sections[year]!.insert(Month(name: name, id: id), at: 0)
             }
             
             // Sort Sections in dictionary
             self.sortedSections = self.sections.keys.sorted(by: >)
-            self.monthsTableView.reloadData()
+            
+            DispatchQueue.main.async {
+                self.monthsTableView.reloadData()
+            }
         })
     }
 
 }
+
+

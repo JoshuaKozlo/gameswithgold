@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import AVKit
 
 import Firebase
 
@@ -59,6 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [END add_token_refresh_observer]
         return true
     }
+
+    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        if window == self.window {
+//            return .portrait
+//        } else {
+//            return .allButUpsideDown
+//        }
+//    }
+
+
+    
     
     // [START receive_message]
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		034D2F2E1E99EE6600DF3054 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D2F2D1E99EE6600DF3054 /* MonthTableViewCell.swift */; };
 		034D2F321E9F513600DF3054 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 034D2F311E9F513600DF3054 /* GoogleService-Info.plist */; };
+		0374DA8F1EB44E3300C46F0E /* CommentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374DA8E1EB44E3300C46F0E /* CommentsCollectionViewController.swift */; };
+		0374DA911EB513C600C46F0E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374DA901EB513C600C46F0E /* Comment.swift */; };
+		0374DA931EB5240900C46F0E /* CommentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374DA921EB5240900C46F0E /* CommentCollectionViewCell.swift */; };
+		0374DA951EB7083100C46F0E /* CommentInputContainerVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374DA941EB7083100C46F0E /* CommentInputContainerVIew.swift */; };
 		037922481E96C9090047EC27 /* MonthsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037922471E96C9090047EC27 /* MonthsTableViewController.swift */; };
 		0379224A1E96F6C50047EC27 /* GamesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037922491E96F6C50047EC27 /* GamesTableViewCell.swift */; };
 		0379224C1E96F78A0047EC27 /* GamesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0379224B1E96F78A0047EC27 /* GamesViewController.swift */; };
@@ -37,6 +41,10 @@
 		034D2F2D1E99EE6600DF3054 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
 		034D2F311E9F513600DF3054 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		034D2F331E9F525100DF3054 /* GamesWithGold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GamesWithGold.entitlements; sourceTree = "<group>"; };
+		0374DA8E1EB44E3300C46F0E /* CommentsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCollectionViewController.swift; sourceTree = "<group>"; };
+		0374DA901EB513C600C46F0E /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		0374DA921EB5240900C46F0E /* CommentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCollectionViewCell.swift; sourceTree = "<group>"; };
+		0374DA941EB7083100C46F0E /* CommentInputContainerVIew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentInputContainerVIew.swift; sourceTree = "<group>"; };
 		037922471E96C9090047EC27 /* MonthsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthsTableViewController.swift; sourceTree = "<group>"; };
 		037922491E96F6C50047EC27 /* GamesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesTableViewCell.swift; sourceTree = "<group>"; };
 		0379224B1E96F78A0047EC27 /* GamesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 		03936C201E95ABE9003F0C9D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0374DA8E1EB44E3300C46F0E /* CommentsCollectionViewController.swift */,
 				037922471E96C9090047EC27 /* MonthsTableViewController.swift */,
 				0379224B1E96F78A0047EC27 /* GamesViewController.swift */,
 			);
@@ -147,6 +156,8 @@
 			children = (
 				037922491E96F6C50047EC27 /* GamesTableViewCell.swift */,
 				034D2F2D1E99EE6600DF3054 /* MonthTableViewCell.swift */,
+				0374DA921EB5240900C46F0E /* CommentCollectionViewCell.swift */,
+				0374DA941EB7083100C46F0E /* CommentInputContainerVIew.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 			children = (
 				03936C291E95BB78003F0C9D /* Month.swift */,
 				0379224D1E9714250047EC27 /* Game.swift */,
+				0374DA901EB513C600C46F0E /* Comment.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -239,6 +251,9 @@
 						DevelopmentTeam = L7332J679M;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -392,10 +407,14 @@
 			files = (
 				034D2F2E1E99EE6600DF3054 /* MonthTableViewCell.swift in Sources */,
 				03936BFF1E95A2FC003F0C9D /* AppDelegate.swift in Sources */,
+				0374DA931EB5240900C46F0E /* CommentCollectionViewCell.swift in Sources */,
+				0374DA8F1EB44E3300C46F0E /* CommentsCollectionViewController.swift in Sources */,
+				0374DA951EB7083100C46F0E /* CommentInputContainerVIew.swift in Sources */,
 				0379224E1E9714250047EC27 /* Game.swift in Sources */,
 				037922481E96C9090047EC27 /* MonthsTableViewController.swift in Sources */,
 				0379224A1E96F6C50047EC27 /* GamesTableViewCell.swift in Sources */,
 				0379224C1E96F78A0047EC27 /* GamesViewController.swift in Sources */,
+				0374DA911EB513C600C46F0E /* Comment.swift in Sources */,
 				03936C2A1E95BB78003F0C9D /* Month.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

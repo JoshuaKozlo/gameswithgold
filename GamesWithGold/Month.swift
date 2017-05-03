@@ -9,6 +9,6 @@
 import Foundation
 
 struct Month {
-    let title: String
-    let ref: String
+    let name: String
+    let id: String
 }

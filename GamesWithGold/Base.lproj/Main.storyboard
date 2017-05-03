@@ -56,11 +56,10 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaC-qD-QrD" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="18F-RI-wYh"/>
-                                    <constraint firstAttribute="width" constant="320" id="9AR-gb-YW6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -68,9 +67,11 @@
                         <constraints>
                             <constraint firstItem="TBf-Gf-FDJ" firstAttribute="top" secondItem="qaC-qD-QrD" secondAttribute="bottom" id="5nt-dW-0Qt"/>
                             <constraint firstItem="qaC-qD-QrD" firstAttribute="top" secondItem="Wuc-V4-aJt" secondAttribute="bottom" constant="8" id="G8g-V2-Gsz"/>
+                            <constraint firstAttribute="trailing" secondItem="qaC-qD-QrD" secondAttribute="trailing" id="Kgv-ih-t68"/>
                             <constraint firstItem="qaC-qD-QrD" firstAttribute="centerX" secondItem="Ihd-Hs-K1H" secondAttribute="centerX" id="Los-nJ-Q8e"/>
                             <constraint firstAttribute="trailing" secondItem="Wuc-V4-aJt" secondAttribute="trailing" id="N6E-wm-95S"/>
                             <constraint firstItem="Wuc-V4-aJt" firstAttribute="top" secondItem="Ihd-Hs-K1H" secondAttribute="top" id="ix1-ML-lKf"/>
+                            <constraint firstItem="qaC-qD-QrD" firstAttribute="leading" secondItem="Ihd-Hs-K1H" secondAttribute="leading" id="kXK-jM-y8U"/>
                             <constraint firstItem="Wuc-V4-aJt" firstAttribute="leading" secondItem="Ihd-Hs-K1H" secondAttribute="leading" id="oYe-07-VVq"/>
                         </constraints>
                     </view>
@@ -99,8 +100,7 @@
                             <webView contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="rhG-wj-Fx4">
                                 <rect key="frame" x="0.0" y="64" width="375" height="211"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rhG-wj-Fx4" secondAttribute="height" multiplier="375:211" id="RXP-Gb-b9o"/>
-                                    <constraint firstAttribute="height" constant="211" id="liV-BN-fmz"/>
+                                    <constraint firstAttribute="width" secondItem="rhG-wj-Fx4" secondAttribute="height" multiplier="375:211" id="pdn-ry-kGI"/>
                                 </constraints>
                             </webView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rgl-fX-mGn">
@@ -164,32 +164,28 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXm-CN-fPT" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8va-zC-NhY"/>
-                                    <constraint firstAttribute="width" constant="320" id="ZL8-wq-FTR"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rXm-CN-fPT" firstAttribute="centerX" secondItem="aAi-d8-PmX" secondAttribute="centerX" id="4uq-vD-PMA"/>
+                            <constraint firstItem="rXm-CN-fPT" firstAttribute="leading" secondItem="aAi-d8-PmX" secondAttribute="leading" id="5gJ-Xl-BXv"/>
                             <constraint firstItem="sIA-nh-vMH" firstAttribute="top" secondItem="rXm-CN-fPT" secondAttribute="bottom" id="5tu-b9-ZRy"/>
-                            <constraint firstItem="rhG-wj-Fx4" firstAttribute="centerX" secondItem="aAi-d8-PmX" secondAttribute="centerX" id="70Z-uE-P13"/>
+                            <constraint firstAttribute="trailing" secondItem="rXm-CN-fPT" secondAttribute="trailing" id="8Bb-Y6-xgR"/>
+                            <constraint firstItem="rhG-wj-Fx4" firstAttribute="leading" secondItem="aAi-d8-PmX" secondAttribute="leading" id="CNR-wk-4xa"/>
                             <constraint firstItem="rgl-fX-mGn" firstAttribute="leading" secondItem="aAi-d8-PmX" secondAttribute="leading" id="IZu-oI-ijS"/>
-                            <constraint firstItem="rgl-fX-mGn" firstAttribute="top" secondItem="rhG-wj-Fx4" secondAttribute="bottom" id="RpS-aT-7Dz"/>
-                            <constraint firstItem="rhG-wj-Fx4" firstAttribute="top" secondItem="CFC-KU-oJs" secondAttribute="bottom" id="STv-0f-fPW"/>
+                            <constraint firstItem="rhG-wj-Fx4" firstAttribute="top" secondItem="CFC-KU-oJs" secondAttribute="bottom" id="KMA-IA-pdQ"/>
+                            <constraint firstAttribute="trailing" secondItem="rhG-wj-Fx4" secondAttribute="trailing" id="Lkt-dG-ga0"/>
                             <constraint firstAttribute="trailing" secondItem="rgl-fX-mGn" secondAttribute="trailing" id="Ztr-vR-iIg"/>
                             <constraint firstItem="rXm-CN-fPT" firstAttribute="top" secondItem="rgl-fX-mGn" secondAttribute="bottom" id="d5n-Gv-tX2"/>
-                            <constraint firstItem="rhG-wj-Fx4" firstAttribute="leading" secondItem="aAi-d8-PmX" secondAttribute="leading" id="d7T-y6-GrY"/>
+                            <constraint firstItem="rgl-fX-mGn" firstAttribute="top" secondItem="rhG-wj-Fx4" secondAttribute="bottom" id="o46-xI-NjF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dBG-XO-L1S">
-                        <barButtonItem key="rightBarButtonItem" image="message" id="gBe-AH-qon">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="bannerAd" destination="rXm-CN-fPT" id="kU1-C5-mUB"/>
                         <outlet property="gamesTableView" destination="rgl-fX-mGn" id="yth-TG-Nth"/>
@@ -205,6 +201,7 @@
             <objects>
                 <navigationController id="8NO-Fd-01w" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <value key="contentSizeForViewInPopover" type="size" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bhs-59-aM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -223,7 +220,4 @@
             <point key="canvasLocation" x="1448.8" y="236.13193403298354"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="message" width="24" height="24"/>
-    </resources>
 </document>
