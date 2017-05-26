@@ -23,12 +23,12 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
         monthsTableView.dataSource = self
         navigationSetup()
         
-        if (FIRAuth.auth()?.currentUser) != nil {
+        if (Auth.auth().currentUser) != nil {
             
             fetchMonths()
         } else {
             
-            FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
+            Auth.auth().signInAnonymously(completion: { (user, error) in
                 if error != nil {
                     let alert = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -108,7 +108,7 @@ class MonthsTableViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     private func fetchMonths() {
-        FIRDatabase.database().reference().child("months").observe(.childAdded, with: { (snapshot) -> Void in
+        Database.database().reference().child("months").observe(.childAdded, with: { (snapshot) -> Void in
             let id: String = snapshot.key
             let year = id.components(separatedBy: "m")[0]
             let name = snapshot.value as! String

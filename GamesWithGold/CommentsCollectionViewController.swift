@@ -36,7 +36,7 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
     }
     
     func setDisplayName() {
-        if ((FIRAuth.auth()?.currentUser?.displayName) != nil) {
+        if ((Auth.auth().currentUser?.displayName) != nil) {
             return
         } else {
             let alert = UIAlertController(title: "Enter Gamertag", message: "Name used to identify you in comment section.", preferredStyle: .alert)
@@ -47,7 +47,7 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                 let textField = alert?.textFields![0]
                 
-                let changeRequest = FIRAuth.auth()?.currentUser?.profileChangeRequest()
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                 changeRequest?.displayName = textField?.text
                 changeRequest?.commitChanges(completion: nil)
             }))
@@ -57,7 +57,7 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        FIRDatabase.database().reference().child("comments").child(month.id).removeAllObservers()
+        Database.database().reference().child("comments").child(month.id).removeAllObservers()
     }
     
     lazy var inputContainerView: CommentInputContainerView = {
@@ -99,7 +99,7 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
     
     private func setupCell(cell: CommentCollectionViewCell, comment: Comment) {
         
-        if comment.senderId == FIRAuth.auth()?.currentUser?.uid {
+        if comment.senderId == Auth.auth().currentUser?.uid {
             //outgoing blue
             cell.bubbleView.backgroundColor = CommentCollectionViewCell.blueColor
             cell.textView.textColor = UIColor.white
@@ -139,7 +139,7 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
     }
 
     func observeComments() {
-        let ref = FIRDatabase.database().reference().child("comments").child(month.id)
+        let ref = Database.database().reference().child("comments").child(month.id)
         
         ref.observe(.childAdded, with: { (snapshot) in
             guard let dictionary = snapshot.value as? [String: AnyObject] else {
@@ -158,9 +158,9 @@ class CommentsCollectionViewController: UICollectionViewController, UICollection
     }
         
     func handleSend() {
-        let ref = FIRDatabase.database().reference().child("comments").child(month.id)
+        let ref = Database.database().reference().child("comments").child(month.id)
         let childRef = ref.childByAutoId()
-        guard let user = FIRAuth.auth()?.currentUser else {
+        guard let user = Auth.auth().currentUser else {
             return
         }
         

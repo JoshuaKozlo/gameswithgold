@@ -15,7 +15,7 @@ class Comment: NSObject {
     var text: String?
     
     func isSender() -> Bool? {
-        if senderId == FIRAuth.auth()?.currentUser?.uid {
+        if senderId == Auth.auth().currentUser?.uid {
             return true
         } else {
             return false

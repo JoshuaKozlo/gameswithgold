@@ -56,7 +56,7 @@ class GamesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func fetchGames() {
-        FIRDatabase.database().reference().child("games/\(month.id)").observeSingleEvent(of: .value, with: { (snapshot) in
+        Database.database().reference().child("games/\(month.id)").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let video = value?["video"] as? String ?? ""
             if let games = value?["games"] as? [String: AnyObject] {

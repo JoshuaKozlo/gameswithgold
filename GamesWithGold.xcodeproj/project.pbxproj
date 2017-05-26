@@ -23,7 +23,9 @@
 		03936C091E95A2FC003F0C9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03936C071E95A2FC003F0C9D /* LaunchScreen.storyboard */; };
 		03936C141E95A2FC003F0C9D /* GamesWithGoldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03936C131E95A2FC003F0C9D /* GamesWithGoldTests.swift */; };
 		03936C2A1E95BB78003F0C9D /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03936C291E95BB78003F0C9D /* Month.swift */; };
+		03A641C11ED4D68100663913 /* AppDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A641C01ED4D68100663913 /* AppDelegate2.swift */; };
 		03C1003D1EA1EC390045360E /* Pods_GamesWithGold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE9597F0DE55DD1C49DFE3 /* Pods_GamesWithGold.framework */; };
+		03E36E1C1ED79C1400A73FCF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E36E1B1ED79C1400A73FCF /* AdSupport.framework */; };
 		FC7A631CD3F9265DA3FB639F /* Pods_GamesWithGoldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D0665F93AC1C44E9E06C1 /* Pods_GamesWithGoldTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		03936C131E95A2FC003F0C9D /* GamesWithGoldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithGoldTests.swift; sourceTree = "<group>"; };
 		03936C151E95A2FC003F0C9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03936C291E95BB78003F0C9D /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		03A641C01ED4D68100663913 /* AppDelegate2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate2.swift; sourceTree = "<group>"; };
+		03E36E1B1ED79C1400A73FCF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		128D4BF6B8198D458A57C461 /* Pods-GamesWithGold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamesWithGold.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamesWithGold/Pods-GamesWithGold.release.xcconfig"; sourceTree = "<group>"; };
 		2891B82AF5992E614CA2A7B7 /* Pods-GamesWithGoldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamesWithGoldTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamesWithGoldTests/Pods-GamesWithGoldTests.debug.xcconfig"; sourceTree = "<group>"; };
 		549D0665F93AC1C44E9E06C1 /* Pods_GamesWithGoldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GamesWithGoldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E36E1C1ED79C1400A73FCF /* AdSupport.framework in Frameworks */,
 				03C1003D1EA1EC390045360E /* Pods_GamesWithGold.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,6 +133,7 @@
 				03936C071E95A2FC003F0C9D /* LaunchScreen.storyboard */,
 				034D2F311E9F513600DF3054 /* GoogleService-Info.plist */,
 				03936C0A1E95A2FC003F0C9D /* Info.plist */,
+				03A641C01ED4D68100663913 /* AppDelegate2.swift */,
 			);
 			path = GamesWithGold;
 			sourceTree = "<group>";
@@ -175,6 +181,7 @@
 		03A825315D64C1FBF20ECD36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03E36E1B1ED79C1400A73FCF /* AdSupport.framework */,
 				F1CE9597F0DE55DD1C49DFE3 /* Pods_GamesWithGold.framework */,
 				549D0665F93AC1C44E9E06C1 /* Pods_GamesWithGoldTests.framework */,
 			);
@@ -408,6 +415,7 @@
 				034D2F2E1E99EE6600DF3054 /* MonthTableViewCell.swift in Sources */,
 				03936BFF1E95A2FC003F0C9D /* AppDelegate.swift in Sources */,
 				0374DA931EB5240900C46F0E /* CommentCollectionViewCell.swift in Sources */,
+				03A641C11ED4D68100663913 /* AppDelegate2.swift in Sources */,
 				0374DA8F1EB44E3300C46F0E /* CommentsCollectionViewController.swift in Sources */,
 				0374DA951EB7083100C46F0E /* CommentInputContainerVIew.swift in Sources */,
 				0379224E1E9714250047EC27 /* Game.swift in Sources */,
@@ -563,6 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hansolopreneur.GamesWithGold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -579,6 +588,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hansolopreneur.GamesWithGold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
