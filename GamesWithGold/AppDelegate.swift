@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        // Configure Firebase
         FirebaseApp.configure()
         
         
@@ -39,10 +40,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
+    }
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
         
         if let navigationController = self.window?.rootViewController as? UINavigationController {
             navigationController.popToRootViewController(animated: true)
         }
+        
     }
+    
+//    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+//        if window == self.window {
+//            return .portrait
+//        } else {
+//            return .allButUpsideDown
+//        }
+//    }
 }

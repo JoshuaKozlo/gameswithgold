@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0315F09D1ED7CEB2000D56D4 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0315F09C1ED7CEB2000D56D4 /* iAd.framework */; };
 		034D2F2E1E99EE6600DF3054 /* MonthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034D2F2D1E99EE6600DF3054 /* MonthTableViewCell.swift */; };
 		034D2F321E9F513600DF3054 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 034D2F311E9F513600DF3054 /* GoogleService-Info.plist */; };
 		0374DA8F1EB44E3300C46F0E /* CommentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0374DA8E1EB44E3300C46F0E /* CommentsCollectionViewController.swift */; };
@@ -23,7 +24,6 @@
 		03936C091E95A2FC003F0C9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03936C071E95A2FC003F0C9D /* LaunchScreen.storyboard */; };
 		03936C141E95A2FC003F0C9D /* GamesWithGoldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03936C131E95A2FC003F0C9D /* GamesWithGoldTests.swift */; };
 		03936C2A1E95BB78003F0C9D /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03936C291E95BB78003F0C9D /* Month.swift */; };
-		03A641C11ED4D68100663913 /* AppDelegate2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A641C01ED4D68100663913 /* AppDelegate2.swift */; };
 		03C1003D1EA1EC390045360E /* Pods_GamesWithGold.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CE9597F0DE55DD1C49DFE3 /* Pods_GamesWithGold.framework */; };
 		03E36E1C1ED79C1400A73FCF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03E36E1B1ED79C1400A73FCF /* AdSupport.framework */; };
 		FC7A631CD3F9265DA3FB639F /* Pods_GamesWithGoldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549D0665F93AC1C44E9E06C1 /* Pods_GamesWithGoldTests.framework */; };
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0315F09C1ED7CEB2000D56D4 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		034D2F2D1E99EE6600DF3054 /* MonthTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthTableViewCell.swift; sourceTree = "<group>"; };
 		034D2F311E9F513600DF3054 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		034D2F331E9F525100DF3054 /* GamesWithGold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GamesWithGold.entitlements; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		03936C131E95A2FC003F0C9D /* GamesWithGoldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithGoldTests.swift; sourceTree = "<group>"; };
 		03936C151E95A2FC003F0C9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03936C291E95BB78003F0C9D /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
-		03A641C01ED4D68100663913 /* AppDelegate2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate2.swift; sourceTree = "<group>"; };
 		03E36E1B1ED79C1400A73FCF /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		128D4BF6B8198D458A57C461 /* Pods-GamesWithGold.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamesWithGold.release.xcconfig"; path = "Pods/Target Support Files/Pods-GamesWithGold/Pods-GamesWithGold.release.xcconfig"; sourceTree = "<group>"; };
 		2891B82AF5992E614CA2A7B7 /* Pods-GamesWithGoldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GamesWithGoldTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GamesWithGoldTests/Pods-GamesWithGoldTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0315F09D1ED7CEB2000D56D4 /* iAd.framework in Frameworks */,
 				03E36E1C1ED79C1400A73FCF /* AdSupport.framework in Frameworks */,
 				03C1003D1EA1EC390045360E /* Pods_GamesWithGold.framework in Frameworks */,
 			);
@@ -92,17 +93,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		030155841EA5B9EA00806D8A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 		03936BF21E95A2FB003F0C9D = {
 			isa = PBXGroup;
 			children = (
-				030155841EA5B9EA00806D8A /* Helpers */,
 				03936BFD1E95A2FC003F0C9D /* GamesWithGold */,
 				03936C121E95A2FC003F0C9D /* GamesWithGoldTests */,
 				03936BFC1E95A2FC003F0C9D /* Products */,
@@ -133,7 +126,6 @@
 				03936C071E95A2FC003F0C9D /* LaunchScreen.storyboard */,
 				034D2F311E9F513600DF3054 /* GoogleService-Info.plist */,
 				03936C0A1E95A2FC003F0C9D /* Info.plist */,
-				03A641C01ED4D68100663913 /* AppDelegate2.swift */,
 			);
 			path = GamesWithGold;
 			sourceTree = "<group>";
@@ -181,6 +173,7 @@
 		03A825315D64C1FBF20ECD36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0315F09C1ED7CEB2000D56D4 /* iAd.framework */,
 				03E36E1B1ED79C1400A73FCF /* AdSupport.framework */,
 				F1CE9597F0DE55DD1C49DFE3 /* Pods_GamesWithGold.framework */,
 				549D0665F93AC1C44E9E06C1 /* Pods_GamesWithGoldTests.framework */,
@@ -415,7 +408,6 @@
 				034D2F2E1E99EE6600DF3054 /* MonthTableViewCell.swift in Sources */,
 				03936BFF1E95A2FC003F0C9D /* AppDelegate.swift in Sources */,
 				0374DA931EB5240900C46F0E /* CommentCollectionViewCell.swift in Sources */,
-				03A641C11ED4D68100663913 /* AppDelegate2.swift in Sources */,
 				0374DA8F1EB44E3300C46F0E /* CommentsCollectionViewController.swift in Sources */,
 				0374DA951EB7083100C46F0E /* CommentInputContainerVIew.swift in Sources */,
 				0379224E1E9714250047EC27 /* Game.swift in Sources */,
@@ -566,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = GamesWithGold/GamesWithGold.entitlements;
 				DEVELOPMENT_TEAM = L7332J679M;
 				INFOPLIST_FILE = GamesWithGold/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hansolopreneur.GamesWithGold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -583,7 +575,7 @@
 				CODE_SIGN_ENTITLEMENTS = GamesWithGold/GamesWithGold.entitlements;
 				DEVELOPMENT_TEAM = L7332J679M;
 				INFOPLIST_FILE = GamesWithGold/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hansolopreneur.GamesWithGold;
 				PRODUCT_NAME = "$(TARGET_NAME)";
